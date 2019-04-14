@@ -1,4 +1,4 @@
-FROM jenkins:2.19.4
+FROM jenkins/jenkins:lts
 
 USER root
 RUN apt-get update \
