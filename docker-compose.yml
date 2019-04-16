@@ -88,6 +88,7 @@ services:
     - nexus
     - gitlab
     - sonar
+	- jira
   environment:
     - NEXUS_PORT=8081
     - SONAR_PORT=9000
@@ -133,3 +134,10 @@ services:
     - /opt/gitlab/config:/etc/gitlab
     - /opt/gitlab/logs:/var/log/gitlab
     - /opt/gitlab/data:/var/opt/gitlab
+ jira:
+  build: ./jira
+  ports:
+    - "18080:8082"
+  networks:
+    - prodnetwork 
+	
